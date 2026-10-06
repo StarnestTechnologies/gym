@@ -1,0 +1,4397 @@
+/* VOLT Strength — responsive recreation */
+:root{
+  --lime:#ff9900;
+  --black:#0d0e0e;
+  --dark:#111313;
+  --mid:#1a1c1c;
+  --white:#f4f4f0;
+  --muted:#9b9d94;
+}
+*{
+    box-sizing:border-box
+}
+html{
+    scroll-behavior:smooth
+}
+
+#contactfinal {
+    scroll-margin-top: 90px;
+}
+
+#diet-plan {
+    scroll-margin-top: 90px;
+}
+
+#workout-plan {
+    scroll-margin-top: 90px;
+}
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Headings and display text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.btn,
+.eyebrow,
+.tag,
+.ticker,
+.footer-brand {
+    font-family: "Barlow Condensed", Impact, sans-serif;
+}
+
+/* Normal website text */
+p,
+span,
+a,
+li,
+label,
+input,
+textarea,
+select,
+button {
+    font-family: "Inter", Arial, sans-serif;
+}
+a{
+    text-decoration:none
+}
+.volt-nav{
+    height:100px;background:rgba(10,11,11,.96);border-bottom:1px solid #252727;z-index:1000
+}
+.navbar-brand{
+    font-size:30px;font-weight:800;letter-spacing:.5px;color:#fff
+}
+.brand-mark{
+    display:inline-grid;
+    place-items:center;
+    width:22px;height:22px;background:#f5f5f2;color:#111;font:800 14px Inter;clip-path:polygon(0 0,100% 0,100% 72%,70% 72%,70% 100%,0 100%)}
+.navbar-nav{gap:32px}
+.nav-link{font:700 12px Inter;letter-spacing:.06em;color:#aeb0a9!important;padding:27px 0!important}
+.nav-link:hover,.nav-link.active{color:var(--lime)!important}
+.btn{border-radius:0;font-weight:800;letter-spacing:.03em}
+.btn-lime{background:var(--lime);border:1px solid var(--lime);color:#101100}
+.btn-lime:hover{background:#d0ff45;border-color:#d0ff45;color:#111}
+.btn-outline-lime{border:1px solid var(--lime);color:var(--lime)}
+.btn-outline-lime:hover{background:var(--lime);color:#111}
+.profile-btn{width:21px;height:21px;border-radius:50%;border:0;background:#f6f6f2;color:#222;font-size:9px}
+.hero-section {
+    height: 560px;
+    min-height: 650px;
+    position: relative;
+    margin-top: 72px;
+    overflow: hidden;
+}
+
+/* ================================
+   HERO SLIDES
+================================ */
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    background-position: center 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transform: scale(1.05);
+
+    transition:
+        opacity 1.2s ease-in-out,
+        transform 6s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ================================
+   DARK OVERLAY
+================================ */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 9, 9, .95) 0%,
+            rgba(8, 9, 9, .70) 35%,
+            rgba(8, 9, 9, .28) 70%,
+            rgba(8, 9, 9, .70) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8, 9, 9, .75),
+            transparent 40%
+        );
+}
+
+/* ================================
+   HERO CONTENT
+================================ */
+
+.hero-section .container {
+    z-index: 3;
+}
+
+.hero-content {
+    padding-top: 30px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 76px;
+    line-height: .81;
+    font-weight: 800;
+    letter-spacing: -.015em;
+    margin: 0 0 28px;
+}
+
+.hero-content h1 em {
+    font-style: normal;
+    color: var(--lime);
+}
+
+/* ================================
+   SLIDE DOTS
+================================ */
+
+.hero-dots {
+    position: absolute;
+    z-index: 5;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .45);
+
+    cursor: pointer;
+
+    transition:
+        width .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+.hero-dot:hover {
+    transform: scale(1.3);
+}
+
+.hero-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: var(--lime);
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        height: 600px;
+        min-height: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: 52px;
+        line-height: .88;
+    }
+
+    .hero-slide {
+        background-position: center center;
+    }
+
+    .hero-dots {
+        bottom: 25px;
+    }
+}
+.hero-content{padding-top:30px;max-width:600px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.19em;color:var(--lime);margin-bottom:12px}
+.eyebrow span{display:inline-block;width:28px;height:2px;background:var(--lime);vertical-align:middle;margin-right:10px}
+.hero-content h1{font-size:76px;line-height:.81;font-weight:800;letter-spacing:-.015em;margin:0 0 28px}
+.hero-content h1 em,.cta-section h2 em{font-style:normal;color:var(--lime)}
+.hero-actions{display:flex;gap:14px}
+.hero-actions .btn{min-width:132px;padding:13px 22px;font-size:15px}
+.hero-stats{position:absolute;right:8%;bottom:42px;display:flex;gap:50px}
+.hero-stats>div{min-width:72px}
+.hero-stats strong{display:block;font:800 52px/0.8 "Barlow Condensed";color:var(--lime)}
+.hero-stats sup{font-size:13px;color:#aaa;letter-spacing:.1em}
+.hero-stats small{font:700 10px Inter;letter-spacing:.1em;color:#aaa;display:block;margin-top:9px}
+.ticker {
+    height: 40px;
+    background: #1b1d1d;
+    border-bottom: 1px solid #2a2c2c;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+    
+    animation: scrollTicker 15s linear infinite;
+}
+
+.ticker-group {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    flex-shrink: 0;
+}
+
+.ticker span {
+    color: #777a73;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+.ticker b {
+    color: var(--lime);
+}
+
+/* RIGHT → LEFT */
+@keyframes scrollTicker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.section-dark{background:#101212}
+.section-mid{background:#1b1d1d;border-top:1px solid #2a2c2c}
+.disciplines{padding:76px 0 68px}
+.section-heading{margin-bottom:30px}
+.section-heading h2,.section-mid h2{
+    font-size:47px;
+    line-height:.88;
+    font-weight:700;
+    margin:0
+}
+.section-heading p,.section-mid p{font-size:12px;line-height:1.65;color:#a9aba3;margin:0 0 5px}
+.discipline-card{height:284px;position:relative;background-image:linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.05) 65%),var(--bg);background-size:cover;background-position:center;overflow:hidden;transition:transform .35s,filter .35s}
+.discipline-card:hover{transform:translateY(-6px);filter:brightness(1.12)}
+.tag{position:absolute;top:18px;left:18px;padding:4px 8px;background:#484a49;color:#fff;font:700 10px Inter;letter-spacing:.04em}
+.tag.lime{background:var(--lime);color:#111}
+.card-title{position:absolute;left:18px;bottom:43px;font-size:30px;font-weight:800;line-height:.95}
+.section-mid{padding:70px 0 76px}
+.section-mid h2{margin:8px 0 17px}
+.section-mid .eyebrow{margin-bottom:3px}
+.mini-chart svg{width:100%;height:65px;overflow:visible}
+.mini-chart polyline{fill:none;stroke:var(--lime);stroke-width:2}
+.chart-labels{display:flex;justify-content:space-between;font-size:6px;color:#6e706a;letter-spacing:.13em}
+.trainer-card{background:#111313;padding:12px 12px 20px;min-height:350px}
+.trainer-card img{width:100%;height:265px;object-fit:cover;object-position:center}
+.trainer-card h3{font-size:22px;margin:12px 0 0;line-height:1}
+.trainer-card small{color:var(--lime);font:700 8px Inter;letter-spacing:.1em}
+.trainer-offset{margin-top:38px}
+.cta-section{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:1px solid #282a2a}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(circle at center,rgba(45,48,44,.35),transparent 60%),repeating-linear-gradient(12deg,rgba(255,255,255,.018) 0 1px,transparent 1px 18px),#171919}
+.cta-section h2{font:500 48px/.9 "Barlow Condensed";margin:8px 0 25px}
+.bolt{font-size:42px;color:var(--lime);line-height:1}
+.cta-note{font:700 8px Inter;color:#8b8d87;letter-spacing:.15em;margin-top:16px}
+.footer{
+    background:#0b0c0c;
+    padding:50px 0 0;
+    color:#aaa}
+.footer-brand{font-size:20px;color:#fff;font-weight:800;display:inline-flex;align-items:center;gap:8px}
+.footer p{font-size:10px;line-height:1.6;max-width:240px;margin-top:14px;color:#8f918b}
+.footer h6{font-size:9px;letter-spacing:.08em;color:#fff;margin:4px 0 14px}
+.socials{display:flex;gap:15px}
+.socials a{color:#d0d3c8;font-size:17px}
+.footer-bottom{margin-top:30px;
+    padding:15px 0;
+    border-top:1px solid #1d1f1f;
+    display:flex;
+    justify-content:space-between;
+    font-size:10px;
+    letter-spacing:.08em;
+    color:#6e706a}
+.toast-message{position:fixed;right:22px;bottom:22px;background:var(--lime);color:#111;padding:13px 18px;font:700 11px Inter;transform:translateY(120px);transition:.35s;z-index:2000}
+.toast-message.show{transform:translateY(0)}
+
+.brand-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+@media(max-width:991px){
+ .volt-nav{height:auto;min-height:68px}.nav-link{padding:12px 0!important}.navbar-nav{gap:0}.hero-section{margin-top:68px;min-height:620px}.hero-stats{right:5%;bottom:28px}.hero-content h1{font-size:64px}
+ .trainer-offset{margin-top:0}
+}
+@media(max-width:575px){
+ .hero-section{min-height:650px;background-position:58% center}.hero-content h1{font-size:55px}.hero-actions{flex-direction:column;width:180px}.hero-actions .btn{width:100%}
+ .hero-stats{position:relative;right:auto;bottom:auto;margin-top:50px;gap:28px}.hero-section .container{align-items:flex-start;padding-top:90px;display:block!important}
+ .disciplines,.section-mid{padding:55px 0}.section-heading h2,.section-mid h2{font-size:40px}.section-heading p{margin-top:25px}.discipline-card{height:330px}
+ .cta-section h2{font-size:42px}.footer-bottom{flex-direction:column;gap:8px}
+}
+/* =====================================================
+   VOLT DIET PLAN
+===================================================== */
+
+.diet-plan-section {
+    position: relative;
+    padding: 85px 0 95px;
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(255,153,0,.08),
+            transparent 30%
+        ),
+        #111313;
+
+    overflow: hidden;
+}
+
+
+/* background grid */
+
+.diet-plan-section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.diet-heading {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 32px;
+}
+
+.diet-heading h2 {
+
+    margin: 0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 62px;
+
+    line-height: .82;
+
+    font-weight: 700;
+}
+
+.diet-heading h2 em {
+
+    color: var(--lime);
+
+    font-style: normal;
+}
+
+.diet-heading p {
+
+    max-width: 440px;
+
+    margin:
+        0 0 4px
+        auto;
+
+    color: #999c95;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   DIET TABS
+===================================================== */
+
+.diet-tabs {
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.diet-tab {
+
+    position: relative;
+
+    padding: 11px 22px;
+
+    border: 1px solid #383b39;
+
+    background: #151717;
+
+    color: #898c85;
+
+    font-family: Inter, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    cursor: pointer;
+
+    transition:
+        .3s ease;
+}
+
+.diet-tab:hover {
+
+    color: var(--lime);
+
+    border-color:
+        var(--lime);
+
+    transform:
+        translateY(-2px);
+}
+
+.diet-tab.active {
+
+    background:
+        var(--lime);
+
+    color: #111;
+
+    border-color:
+        var(--lime);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,153,0,.15);
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.diet-layout {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        .72fr 1.28fr;
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   ATHLETE
+===================================================== */
+
+.diet-athlete {
+
+    position: relative;
+
+    min-height: 720px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,153,0,.10),
+            transparent 38%
+        ),
+        #080909;
+
+    border:
+        1px solid #292b2b;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+}
+
+
+/* orange glow */
+
+.athlete-glow {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,153,0,.09);
+
+    filter:
+        blur(65px);
+
+    animation:
+        athletePulse
+        5s ease-in-out
+        infinite;
+}
+
+
+/* grid */
+
+.athlete-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+
+    opacity: .35;
+}
+
+
+/* bodybuilder */
+
+.athlete-image {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    height: 680px;
+
+    object-fit: contain;
+
+    object-position:
+        center bottom;
+
+    filter:
+        grayscale(100%)
+        contrast(1.15)
+        brightness(.9)
+        drop-shadow(
+            0 0 25px
+            rgba(255,153,0,.08)
+        );
+
+    animation:
+        athleteMove
+        5s ease-in-out
+        infinite;
+
+    transition:
+        transform .6s ease,
+        filter .5s ease;
+}
+
+
+/* athlete hover */
+
+.diet-athlete:hover
+.athlete-image {
+
+    transform:
+        scale(1.025);
+
+    filter:
+        grayscale(100%)
+        contrast(1.2)
+        brightness(1)
+        drop-shadow(
+            0 0 35px
+            rgba(255,153,0,.2)
+        );
+}
+
+
+/* athlete heading */
+
+.athlete-heading {
+
+    position: absolute;
+
+    z-index: 4;
+
+    top: 22px;
+
+    left: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.athlete-heading span {
+
+    color: var(--lime);
+
+    font: 800 8px Inter;
+
+    letter-spacing:
+        .18em;
+
+    margin-bottom: 7px;
+}
+
+.athlete-heading strong {
+
+    color: #fff;
+
+    font:
+        600 28px
+        "Barlow Condensed";
+
+    line-height: .86;
+}
+
+
+/* athlete bottom */
+
+.athlete-footer {
+
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 17px;
+
+    left: 18px;
+
+    right: 18px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    border-top:
+        1px solid #353736;
+
+    padding-top: 9px;
+
+    color: #747771;
+
+    font: 700 7px Inter;
+
+    letter-spacing:
+        .13em;
+}
+
+.athlete-footer span:first-child {
+
+    color:
+        var(--lime);
+}
+
+
+/* =====================================================
+   FOOD AREA
+===================================================== */
+
+.diet-food-area {
+
+    position: relative;
+
+    background:
+        #151717;
+
+    border:
+        1px solid #292b2b;
+
+    padding: 25px;
+
+    min-height: 720px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.diet-content {
+
+    display: none;
+
+    animation:
+        dietFade
+        .45s ease;
+}
+
+.diet-content.active {
+
+    display: block;
+}
+
+
+/* header */
+
+.diet-content-header {
+
+    display: flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    border-bottom:
+        1px solid #303232;
+
+    padding-bottom: 17px;
+
+    margin-bottom: 18px;
+}
+
+.diet-small-title {
+
+    color:
+        var(--lime);
+
+    font: 800 8px Inter;
+
+    letter-spacing:
+        .15em;
+}
+
+.diet-content-header h3 {
+
+    margin:
+        5px 0 0;
+
+    color: #f4f4f0;
+
+    font:
+        650 35px
+        "Barlow Condensed";
+
+    line-height: .9;
+}
+
+.diet-content-header h3 em {
+
+    color:
+        var(--lime);
+
+    font-style:
+        normal;
+}
+
+.diet-count {
+
+    color: #696c65;
+
+    font: 700 8px Inter;
+
+    letter-spacing: .1em;
+}
+
+
+/* =====================================================
+   COMPACT FOOD GRID
+===================================================== */
+
+.compact-food-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   COMPACT FOOD CARD
+===================================================== */
+.compact-food-card {
+    position: relative;
+    min-height: 125px;
+
+    display: flex;
+    align-items: center;
+
+    /* background: #101212; */
+
+    /* REMOVE THE SQUARE BORDER */
+    border: none;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+/* orange side */
+
+.compact-food-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 2px;
+
+    height: 0;
+
+    background:
+        var(--lime);
+
+    transition:
+        height .35s ease;
+}
+
+/* Remove entire card hover */
+.compact-food-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Image hover */
+.food-image-small {
+    transition: transform .35s ease, box-shadow .35s ease;
+    cursor: pointer;
+}
+
+.food-image-small:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,.3);
+}
+
+/* Text hover */
+.compact-food-info {
+    transition: transform .35s ease;
+    cursor: pointer;
+}
+
+.compact-food-info:hover {
+    transform: translateY(-5px);
+}
+
+/* .compact-food-card:hover::before {
+
+    height: 100%;
+} */
+
+
+/* =====================================================
+   SMALL FOOD IMAGE
+===================================================== */
+/* =====================================================
+   CIRCULAR FOOD IMAGE
+===================================================== */
+
+.food-image-small {
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10px;
+
+    /* REMOVE SQUARE BORDER */
+    border: none;
+
+    /* CIRCLE */
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    /* Optional circle background */
+    background: #181b1b;
+
+    padding: 0;
+}
+
+
+/* =====================================================
+   FOOD IMAGE
+===================================================== */
+
+.food-image-small img {
+    width: 100%;
+    height: 100%;
+
+    /* MAKE IMAGE ROUND */
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transform: scale(.90);
+
+    transition: transform .4s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.compact-food-card:hover .food-image-small img {
+    transform: scale(1);
+}
+.compact-food-card:hover
+.food-image-small img {
+
+    transform:
+        scale(.98)
+        rotate(2deg);
+}
+
+
+/* =====================================================
+   FOOD INFO
+===================================================== */
+
+.compact-food-info {
+
+    padding:
+        10px 9px;
+
+    min-width: 0;
+}
+
+.compact-food-info > span {
+
+    color:
+        var(--lime);
+
+    font: 800 8px Inter;
+
+    letter-spacing:
+        .1em;
+}
+
+.compact-food-info h4 {
+
+    color:
+        #f4f4f0;
+
+    margin:
+        5px 0 4px;
+
+    font:
+        800 18px
+        "Barlow Condensed";
+
+    line-height: 1;
+}
+
+.compact-food-info small {
+
+    color:
+        #767970;
+
+    font: 700 7px Inter;
+
+    letter-spacing:
+        .1em;
+}
+
+
+/* =====================================================
+   DIET NOTE
+===================================================== */
+
+.diet-note {
+
+    margin-top:
+        18px;
+
+    padding:
+        15px;
+
+    background:
+        #101212;
+
+    border-left:
+        2px solid var(--lime);
+}
+
+.diet-note span {
+
+    color:
+        var(--lime);
+
+    font: 800 8px Inter;
+
+    letter-spacing:
+        .13em;
+}
+
+.diet-note p {
+
+    margin:
+        6px 0 0;
+
+    color:
+        #858881;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes athleteMove {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+@keyframes athletePulse {
+
+    0%,
+    100% {
+        opacity: .45;
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+        opacity: .8;
+
+        transform:
+            scale(1.15);
+    }
+
+}
+
+
+@keyframes dietFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .diet-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .diet-athlete {
+
+        min-height: 550px;
+
+        max-height: 580px;
+    }
+
+    .athlete-image {
+
+        height: 550px;
+    }
+
+    .diet-food-area {
+
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .diet-plan-section {
+
+        padding:
+            60px 0 70px;
+    }
+
+    .diet-heading h2 {
+
+        font-size:
+            45px;
+    }
+
+    .diet-heading p {
+
+        margin-top:
+            20px;
+
+        font-size:
+            11px;
+    }
+
+    .diet-tabs {
+
+        flex-wrap:
+            wrap;
+    }
+
+    .diet-tab {
+
+        flex:
+            1;
+
+        padding:
+            10px 12px;
+
+        font-size:
+            8px;
+    }
+
+    .diet-athlete {
+
+        min-height:
+            480px;
+
+        max-height:
+            510px;
+    }
+
+    .athlete-image {
+
+        height:
+            490px;
+    }
+
+    .diet-food-area {
+
+        padding:
+            15px;
+    }
+
+    .diet-content-header h3 {
+
+        font-size:
+            28px;
+    }
+
+    .compact-food-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .compact-food-card {
+
+        min-height:
+            110px;
+    }
+
+    .food-image-small {
+
+        width:
+            90px;
+
+        height:
+            90px;
+    }
+
+}
+
+/* =====================================================
+   WEEKLY WORKOUT PLAN
+===================================================== */
+
+.weekly-workout-section {
+    position: relative;
+    padding: 80px 0 90px;
+    background: #111313;
+    overflow: hidden;
+}
+
+
+/* subtle background */
+.weekly-workout-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.workout-hero {
+    position: relative;
+    z-index: 2;
+
+    min-height: 330px;
+
+    padding: 0 0 65px;
+
+    border-bottom: 1px solid #252727;
+}
+
+
+.workout-kicker {
+    color: var(--lime);
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+
+    margin-bottom: 18px;
+}
+
+
+.workout-hero h2 {
+    margin: 0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 64px;
+
+    line-height: .86;
+
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+
+    color: #f4f4f0;
+}
+
+
+.workout-hero h2 span {
+    display: block;
+    color: var(--lime);
+    font-weight: 600;
+}
+
+
+.workout-hero p {
+    max-width: 530px;
+
+    margin: 35px 0 0;
+
+    color: #b3b4ad;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   DAYS
+===================================================== */
+
+.workout-days {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 32px;
+
+    padding: 58px 0 28px;
+
+    border-bottom: 1px solid #252727;
+}
+
+
+.workout-day {
+    position: relative;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #d4d4cf;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.workout-day strong {
+    display: block;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    font-weight: 700;
+}
+
+
+.workout-day span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #a8a9a2;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .06em;
+}
+
+
+.workout-day:hover strong,
+.workout-day:hover span {
+    color: var(--lime);
+}
+
+
+.workout-day.active strong,
+.workout-day.active span {
+    color: var(--lime);
+}
+
+
+.workout-day.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -29px;
+
+    height: 2px;
+
+    background: var(--lime);
+}
+
+
+/* =====================================================
+   WORKOUT CONTENT
+===================================================== */
+
+.workout-content {
+    position: relative;
+    z-index: 2;
+
+    padding-top: 48px;
+}
+
+
+.workout-title-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+
+.workout-title-row h3 {
+    margin: 0;
+
+    color: #f4f4f0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 37px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.workout-duration {
+    padding: 7px 14px;
+
+    border: 1px solid var(--lime);
+
+    color: var(--lime);
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+
+/* =====================================================
+   EXERCISE GRID
+===================================================== */
+
+.exercise-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =====================================================
+   EXERCISE CARD
+===================================================== */
+
+.exercise-card {
+    position: relative;
+
+    min-width: 0;
+
+    background: #151717;
+
+    border: 1px solid #303232;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #555854;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.exercise-image {
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+}
+
+
+.exercise-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .6s ease,
+        filter .5s ease;
+}
+
+
+.exercise-card:hover .exercise-image img {
+    transform: scale(1.06);
+
+    filter: brightness(1.08);
+}
+
+
+/* dark gradient */
+.exercise-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(5,6,6,.96) 0%,
+            rgba(5,6,6,.65) 35%,
+            rgba(5,6,6,.05) 75%
+        );
+}
+
+
+/* =====================================================
+   PLAY BUTTON
+===================================================== */
+
+.exercise-play {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,153,0,.55);
+
+    background:
+        rgba(80,70,25,.75);
+
+    color: var(--lime);
+
+    font-size: 21px;
+
+    padding-left: 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        .35s ease;
+
+    z-index: 3;
+}
+
+
+.exercise-play:hover {
+    background: var(--lime);
+
+    color: #111;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+
+/* =====================================================
+   EXERCISE NAME
+===================================================== */
+
+.exercise-number {
+    position: absolute;
+
+    left: 22px;
+    bottom: 44px;
+
+    color: var(--lime);
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.exercise-name {
+    position: absolute;
+
+    left: 68px;
+    bottom: 44px;
+
+    color: #f4f4f0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   BOTTOM DETAILS
+===================================================== */
+
+.exercise-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 65px;
+
+    padding: 12px 20px;
+
+    background: #151717;
+}
+
+
+.exercise-working {
+    color: #b0b1aa;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+}
+
+
+.exercise-stats {
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.exercise-stats div {
+    text-align: right;
+}
+
+
+.exercise-stats small {
+    display: block;
+
+    color: var(--lime);
+
+    font-family: Inter, sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+
+.exercise-stats strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #d5d5ce;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .workout-hero {
+        min-height: 300px;
+    }
+
+    .workout-hero h2 {
+        font-size: 56px;
+    }
+
+    .workout-days {
+        gap: 22px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    .workout-days::-webkit-scrollbar {
+        display: none;
+    }
+
+    .workout-day {
+        flex-shrink: 0;
+    }
+
+    .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .weekly-workout-section {
+        padding: 60px 0 70px;
+    }
+
+    .workout-hero {
+        min-height: 280px;
+
+        padding-bottom: 45px;
+    }
+
+    .workout-hero h2 {
+        font-size: 45px;
+    }
+
+    .workout-hero p {
+        margin-top: 25px;
+
+        font-size: 11px;
+    }
+
+    .workout-days {
+        gap: 20px;
+
+        padding-top: 40px;
+    }
+
+    .workout-day strong {
+        font-size: 21px;
+    }
+
+    .workout-day span {
+        font-size: 8px;
+    }
+
+    .workout-content {
+        padding-top: 35px;
+    }
+
+    .workout-title-row h3 {
+        font-size: 31px;
+    }
+
+    .workout-duration {
+        font-size: 9px;
+
+        padding: 6px 10px;
+    }
+
+    .exercise-image {
+        height: 220px;
+    }
+
+    .exercise-number {
+        left: 15px;
+        bottom: 40px;
+    }
+
+    .exercise-name {
+        left: 58px;
+        bottom: 40px;
+
+        font-size: 17px;
+    }
+
+    .exercise-bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .exercise-stats {
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+}
+
+/* =====================================================
+   VOLT FACILITY / CONTACT SECTION
+===================================================== */
+
+.volt-facility-section {
+    position: relative;
+    padding: 48px 0 58px;
+    background: #080909;
+    border-top: 1px solid #242626;
+    color: #f4f4f0;
+    overflow: hidden;
+}
+
+
+/* subtle grid */
+
+.volt-facility-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+}
+
+
+/* keep content above grid */
+
+.volt-facility-section .container-fluid {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.facility-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+
+.facility-logo {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f4f0;
+    color: #111;
+
+    border-radius: 7px;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+
+.facility-brand-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+
+.facility-brand-name strong {
+    color: var(--lime);
+    font-weight: 800;
+}
+
+
+.facility-description {
+    max-width: 285px;
+
+    color: #8e918a;
+
+    font-size: 11px;
+    line-height: 1.65;
+
+    margin: 0;
+}
+
+
+/* =====================================================
+   SOCIAL ICONS
+===================================================== */
+
+.facility-socials {
+    display: flex;
+    gap: 8px;
+    margin-top: 21px;
+}
+
+
+.facility-socials a {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #2d3030;
+    border-radius: 7px;
+
+    color: #999c96;
+
+    background: #121414;
+
+    font-size: 14px;
+
+    transition: all .25s ease;
+}
+
+
+.facility-socials a:hover {
+    color: var(--lime);
+    border-color: var(--lime);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   OPEN STATUS
+===================================================== */
+
+.facility-open-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 17px;
+    padding: 8px 13px;
+
+    border: 1px solid #2e3131;
+    border-radius: 20px;
+
+    background: #111313;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .04em;
+
+    color: #d6d7d1;
+}
+
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #18c98c;
+
+    box-shadow:
+        0 0 0 4px rgba(24,201,140,.12),
+        0 0 12px rgba(24,201,140,.35);
+}
+
+
+.status-separator {
+    color: #777a74;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.facility-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin: 3px 0 16px;
+
+    color: var(--lime);
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: .13em;
+}
+
+
+.facility-heading i {
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   TIMINGS
+===================================================== */
+
+.timing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 280px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #242727;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 15px;
+}
+
+
+.timing-row:first-of-type {
+    border-top: 1px solid #242727;
+}
+
+
+.timing-row span {
+    color: #8e918a;
+}
+
+
+.timing-row strong {
+    color: #eeeeea;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-block {
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+
+.contact-block p {
+    margin: 0 0 15px;
+
+    color: #b6b8b2;
+
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+
+.contact-block strong {
+    color: #f0f0ec;
+}
+
+
+.contact-block a {
+    display: block;
+
+    color: #c0c2bc;
+
+    transition: color .25s ease;
+}
+
+
+.contact-block a:hover {
+    color: var(--lime);
+}
+
+
+.contact-block p > a[href^="tel"] {
+    display: inline;
+}
+
+
+.direct-inquiries {
+    margin-top: 20px !important;
+}
+
+
+.direct-inquiries strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+
+.direct-inquiries a:first-of-type {
+    color: var(--lime);
+}
+
+
+/* =====================================================
+   MAP TITLE
+===================================================== */
+
+.map-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+
+    color: var(--lime);
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .13em;
+}
+
+
+.parking-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #55a47d;
+
+    font-family: Inter, sans-serif;
+    font-size: 7px;
+    letter-spacing: .1em;
+}
+
+
+.parking-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #20a66d;
+}
+
+
+/* =====================================================
+   FACILITY MAP
+===================================================== */
+
+.facility-map {
+    position: relative;
+
+    height: 176px;
+
+    overflow: hidden;
+
+    border: 1px solid #292c2c;
+    border-radius: 12px;
+
+    background: #0c0e0e;
+}
+
+
+/* map background */
+
+.map-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            rgba(255,255,255,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 15px 15px;
+
+    opacity: .5;
+}
+
+
+/* roads */
+
+.map-road {
+    position: absolute;
+
+    background: #1a1c1c;
+
+    border: 1px solid #242727;
+}
+
+
+.map-road-horizontal {
+    left: -10%;
+    right: -10%;
+    top: 51px;
+
+    height: 23px;
+}
+
+
+.map-road-horizontal.second {
+    top: 128px;
+    height: 18px;
+}
+
+
+.map-road-vertical {
+    top: -20%;
+    bottom: -20%;
+    left: 47%;
+
+    width: 22px;
+}
+
+
+.map-road-vertical.second {
+    left: 75%;
+    width: 15px;
+}
+
+
+/* road labels */
+
+.road-label {
+    position: absolute;
+
+    color: #555954;
+
+    font-size: 6px;
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+.road-power {
+    top: 45px;
+    left: 50%;
+}
+
+
+.road-industrial {
+    top: 72px;
+    left: 10px;
+    transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   MAP LOCATION
+===================================================== */
+
+.map-location {
+    position: absolute;
+
+    top: 55px;
+    left: 55%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.location-pin {
+    width: 33px;
+    height: 33px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    color: #111;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 0 0 8px rgba(255,153,0,.08),
+        0 0 25px rgba(255,153,0,.25);
+}
+
+
+.map-location-name {
+    margin-top: 8px;
+
+    padding: 4px 8px;
+
+    border: 1px solid var(--lime);
+    border-radius: 4px;
+
+    background: #111;
+
+    color: var(--lime);
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   DIRECTIONS
+===================================================== */
+
+.directions-btn {
+    position: absolute;
+
+    left: 50%;
+    bottom: 11px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: black;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: all .25s ease;
+}
+
+
+.directions-btn:hover {
+    color: #111010;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+
+.directions-btn i {
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   MAP INFO
+===================================================== */
+
+.map-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 12px;
+
+    color: #747770;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .volt-facility-section {
+        padding: 45px 0;
+    }
+
+    .facility-description {
+        max-width: 350px;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .volt-facility-section {
+        padding: 40px 0;
+    }
+
+    .facility-heading {
+        margin-top: 15px;
+    }
+
+    .timing-row {
+        max-width: 100%;
+    }
+
+    .map-title-row {
+        margin-top: 15px;
+    }
+
+    .facility-map {
+        height: 190px;
+    }
+
+    .map-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING WHATSAPP BUTTON
+===================================================== */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 29px;
+
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.floating-whatsapp:hover {
+    color: #ffffff;
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 8px 28px rgba(37, 211, 102, 0.45);
+}
+
+
+/* Pulse animation */
+
+.floating-whatsapp::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border: 2px solid #25D366;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation: whatsappPulse 2s infinite;
+}
+
+/* =====================================================
+   MEMBERSHIP TIERS & PRICING
+===================================================== */
+
+.membership-section {
+    position: relative;
+    padding: 90px 0 100px;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 153, 0, 0.08),
+            transparent 35%
+        ),
+        #080909;
+
+    border-top: 1px solid #202222;
+    overflow: hidden;
+}
+
+
+/* BACKGROUND GRID */
+
+.membership-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+    pointer-events: none;
+}
+
+
+/* TOP BADGE */
+
+.membership-badge {
+    position: relative;
+    z-index: 2;
+
+    width: fit-content;
+    margin: 0 auto 22px;
+
+    padding: 8px 18px;
+
+    border: 1px solid rgba(255,153,0,.45);
+    border-radius: 30px;
+
+    background: rgba(255,153,0,.06);
+
+    color: var(--lime);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.membership-badge span {
+    margin-right: 8px;
+}
+
+
+/* HEADING */
+
+.membership-heading {
+    position: relative;
+    z-index: 2;
+}
+
+.membership-heading h2 {
+    margin: 0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 62px;
+    line-height: .85;
+    font-weight: 900;
+
+    letter-spacing: -.02em;
+}
+
+.membership-heading h2 em {
+    color: var(--lime);
+    font-style: normal;
+}
+
+.membership-heading p {
+    max-width: 650px;
+    margin: 25px auto 0;
+
+    color: #a2a49d;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* SAVING BAR */
+
+.membership-saving {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    width: fit-content;
+
+    margin: 28px auto 58px;
+
+    padding: 10px 20px;
+
+    border: 1px solid rgba(255,153,0,.4);
+    border-radius: 30px;
+
+    background: #111313;
+
+    color: var(--lime);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+}
+
+.membership-saving b {
+    color: #666;
+}
+
+.membership-saving small {
+    color: #777a74;
+    font-size: 8px;
+}
+
+
+/* CARDS */
+
+.membership-cards {
+    position: relative;
+    z-index: 3;
+
+    align-items: stretch;
+}
+
+.membership-cards > div {
+    display: flex;
+}
+
+
+/* MEMBERSHIP CARD */
+
+.membership-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 25px 24px 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111419,
+            #0c0e12
+        );
+
+    border: 1px solid #25292e;
+
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.membership-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(255,153,0,.55);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45);
+}
+
+
+/* POPULAR CARD */
+
+.popular-card {
+    border: 2px solid var(--lime);
+
+    box-shadow:
+        0 15px 50px rgba(255,153,0,.15);
+}
+
+.popular-label {
+    position: absolute;
+
+    top: -27px;
+    left: -2px;
+    right: -2px;
+
+    padding: 7px 12px;
+
+    background: var(--lime);
+
+    color: #111;
+
+    text-align: center;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .1em;
+
+    border-radius:
+        12px 12px 0 0;
+}
+
+
+/* CARD TOP */
+
+.membership-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.membership-card-top span {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: rgba(255,153,0,.08);
+
+    border: 1px solid rgba(255,153,0,.3);
+
+    border-radius: 20px;
+
+    color: var(--lime);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+.membership-card-top small {
+    color: #666b70;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: .1em;
+}
+
+
+/* SPECIAL TAG */
+
+.highlight-tag {
+    background: var(--lime) !important;
+    color: #111 !important;
+}
+
+
+/* TITLE */
+
+.membership-card h3 {
+    margin: 0;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 30px;
+    line-height: .9;
+
+    font-weight: 600;
+
+    letter-spacing: .01em;
+}
+
+.title-price-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+/* DESCRIPTION */
+
+.membership-description {
+    min-height: 58px;
+
+    margin: 15px 0 22px;
+
+    color: #9a9da1;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* SAVE BADGE */
+
+.save-badge {
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(255,153,0,.12);
+
+    border: 1px solid rgba(255,153,0,.4);
+
+    color: var(--lime);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-align: center;
+
+    letter-spacing: .04em;
+}
+
+
+/* PRICE BOX */
+
+.price-box {
+    padding: 22px 16px 17px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #101216,
+            #0d0f13
+        );
+
+    border: 1px solid #252930;
+
+    border-radius: 10px;
+
+    margin-bottom: 24px;
+}
+
+.price-box strong {
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 42px;
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: #f4f4f0;
+}
+
+.price-box > span {
+    color: #858990;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .08em;
+}
+
+.price-box del {
+    margin-left: 8px;
+
+    color: #555960;
+
+    font-size: 15px;
+}
+
+
+/* FEATURED PRICE */
+
+.featured-price {
+    border-color:
+        rgba(255,153,0,.55);
+
+    background:
+        linear-gradient(
+            120deg,
+            #17140d,
+            #101114
+        );
+}
+
+.featured-price strong {
+    color: var(--lime);
+}
+
+
+/* PRICE LINE */
+
+.price-line {
+    height: 1px;
+
+    margin: 13px 0;
+
+    background: #272a2e;
+}
+
+
+/* EFFECTIVE RATE */
+
+.effective-rate {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    color: #74787e;
+
+    font-size: 9px;
+}
+
+.effective-rate b {
+    padding: 5px 9px;
+
+    background: var(--lime);
+
+    border-radius: 3px;
+
+    color: #111;
+
+    font-size: 8px;
+}
+
+
+/* INCLUDED */
+
+.included-title {
+    margin-bottom: 12px;
+
+    color: #858990;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+
+/* FEATURES */
+
+.membership-features {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    flex-grow: 1;
+}
+
+.membership-features li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: #c5c7c9;
+
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.membership-features li i {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: var(--lime);
+
+    font-size: 12px;
+}
+
+.membership-features li.disabled {
+    color: #44484d;
+}
+
+.membership-features li.disabled i {
+    color: #393d42;
+}
+
+
+/* BUTTON */
+
+.membership-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 14px 12px;
+
+    border: 1px solid #2c3036;
+    border-radius: 7px;
+
+    background: #14171d;
+
+    color: #f2f2ee;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: .06em;
+
+    transition:
+        all .25s ease;
+}
+
+.membership-btn:hover {
+    background: var(--lime);
+    border-color: var(--lime);
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* FEATURED BUTTON */
+
+.featured-btn {
+    background: var(--lime);
+
+    border-color: var(--lime);
+
+    color: #111;
+
+    box-shadow:
+        0 8px 25px rgba(255,153,0,.18);
+}
+
+.featured-btn:hover {
+    background: #ffb52e;
+
+    border-color: #ffb52e;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   MEMBERSHIP RESPONSIVE
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .membership-heading h2 {
+        font-size: 54px;
+    }
+
+    .membership-cards {
+        row-gap: 45px;
+    }
+
+    .membership-cards > div {
+        display: flex;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .membership-section {
+        padding: 65px 0 75px;
+    }
+
+    .membership-heading h2 {
+        font-size: 43px;
+    }
+
+    .membership-heading p {
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    .membership-saving {
+        flex-direction: column;
+        gap: 7px;
+
+        text-align: center;
+
+        margin-bottom: 48px;
+    }
+
+    .membership-card {
+        padding: 22px 18px;
+    }
+
+    .membership-card h3 {
+        font-size: 30px;
+    }
+
+    .price-box strong {
+        font-size: 38px;
+    }
+
+}
+
+
+
+
+
+
+@keyframes whatsappPulse {
+
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.25);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.25);
+        opacity: 0;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 575px) {
+
+    .floating-whatsapp {
+        width: 52px;
+        height: 52px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 25px;
+    }
+
+}
+.location-map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =====================================================
+   FACILITY MAP - SCREENSHOT STYLE
+===================================================== */
+
+.facility-map {
+    position: relative;
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #101217;
+
+    border: 1px solid #292d35;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+
+/* MAP IMAGE */
+
+.location-map-image {
+    display: block;
+
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+
+    border-radius: 3px;
+
+    border: none;
+}
+
+
+/* DIRECTIONS BUTTON */
+
+.directions-btn {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    height: 38px;
+
+    margin-top: 12px;
+
+    background: #1a1e2a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border: none;
+
+    border-radius: 0;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: .04em;
+
+    text-transform: uppercase;
+
+    transition: all .25s ease;
+}
+
+
+/* ARROW */
+
+.directions-btn i {
+    font-size: 17px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+/* HOVER */
+
+.directions-btn:hover {
+    background: #222735;
+
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+.directions-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+/* REMOVE OLD POSITIONING */
+
+.map-title-row {
+    display: none;
+}
+
+/* =====================================================
+   FINAL MAP + GET LIVE DIRECTIONS FIX
+   KEEP THIS AT THE VERY BOTTOM OF CSS
+===================================================== */
+
+.facility-map {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    padding: 12px !important;
+
+    background: #101217 !important;
+
+    border: 1px solid #292d35 !important;
+
+    border-radius: 2px !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* MAP IMAGE */
+
+.facility-map .location-map-image {
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 175px !important;
+
+    object-fit: cover !important;
+
+    border: none !important;
+
+    border-radius: 3px !important;
+}
+
+
+/* =====================================================
+   GET LIVE DIRECTIONS
+===================================================== */
+
+.facility-map .directions-btn {
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 12px !important;
+
+    width: 100% !important;
+
+    height: 38px !important;
+
+    margin-top: 12px !important;
+
+    padding: 0 15px !important;
+
+    box-sizing: border-box !important;
+
+    background: #1a1e2a !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    text-decoration: none !important;
+
+    font-family: "Barlow Condensed", sans-serif !important;
+
+    font-size: 13px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: .06em !important;
+
+    text-transform: uppercase !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    z-index: 10 !important;
+
+    transition: all .25s ease !important;
+}
+
+
+/* TEXT */
+
+.facility-map .directions-btn span {
+    display: inline-block !important;
+
+    color: #ffffff !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* ARROW */
+
+.facility-map .directions-btn i {
+    display: inline-block !important;
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    transition: transform .25s ease !important;
+}
+
+
+/* HOVER */
+
+.facility-map .directions-btn:hover {
+    background: #242938 !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    transform: none !important;
+}
+
+.facility-map .directions-btn:hover i {
+    transform: translateX(5px) !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 575px) {
+
+    .facility-map {
+        padding: 8px !important;
+    }
+
+    .facility-map .location-map-image {
+        height: 170px !important;
+    }
+
+    .facility-map .directions-btn {
+        height: 42px !important;
+
+        font-size: 12px !important;
+    }
+
+}
+
+/* =====================================================
+   WORKOUT DAY VISIBILITY
+===================================================== */
+
+.day-workout {
+    display: none;
+}
+
+.day-workout.active {
+    display: block;
+}
+
+
+/* =====================================================
+   WORKOUT VIDEO
+===================================================== */
+
+.exercise-image {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.exercise-image video {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #080909;
+}
+
+
+/* Don't block video controls */
+.exercise-overlay {
+    pointer-events: none;
+}
+
+
+/* Mobile */
+@media (max-width: 575px) {
+
+    .exercise-image video {
+        min-height: 230px;
+    }
+
+}
+
+/* =====================================================
+   7-DAY PROGRAM BLUEPRINT
+   Unique class names - no conflict with workout classes
+===================================================== */
+
+.week-blueprint {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151619,
+            #101113
+        );
+
+    border: 1px solid #292b2f;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+
+    overflow: hidden;
+}
+
+
+/* subtle grid background */
+
+.week-blueprint::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.week-blueprint-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #292b2f;
+
+}
+
+
+/* =====================================================
+   KICKER
+===================================================== */
+
+.week-blueprint-kicker {
+
+    margin-bottom: 8px;
+
+    color: #ffd400;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: .15em;
+
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.week-blueprint-heading h2 {
+
+    margin: 0;
+
+    color: #f5f5f3;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -.01em;
+
+}
+
+
+/* =====================================================
+   FREQUENCY
+===================================================== */
+
+.week-blueprint-frequency {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #383a3f;
+
+    border-radius: 4px;
+
+    background: #0b0c0e;
+
+    white-space: nowrap;
+
+}
+
+
+.week-blueprint-frequency span {
+
+    color: #92949a;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+}
+
+
+.week-blueprint-frequency strong {
+
+    color: #ffd400;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .04em;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.week-blueprint-description {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin-top: 17px;
+
+    color: #92949a;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   DAY GRID
+===================================================== */
+
+.week-day-grid {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+}
+
+
+/* =====================================================
+   DAY CARD
+===================================================== */
+
+.week-day-card {
+
+    position: relative;
+
+    min-height: 120px;
+
+    padding: 16px 14px;
+
+    background: #08090b;
+
+    border: 1px solid #292c30;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    cursor: default;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+/* =====================================================
+   TOP ROW
+===================================================== */
+
+.week-day-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 6px;
+
+    margin-bottom: 13px;
+
+}
+
+
+/* DAY NAME */
+
+.week-day-name {
+
+    color: #ffd400;
+
+    font-family:
+        "Barlow Condensed",
+        Impact,
+        sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+}
+
+
+/* SMALL LABEL */
+
+.week-day-label {
+
+    padding: 4px 7px;
+
+    border-radius: 3px;
+
+    background: rgba(255, 212, 0, .08);
+
+    color: #ffd400;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: .04em;
+
+}
+
+
+/* =====================================================
+   WORKOUT TITLE
+===================================================== */
+
+.week-day-card h4 {
+
+    margin: 0;
+
+    color: #eeeeeb;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.week-day-card p {
+
+    margin: 13px 0 0;
+
+    color: #686b70;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+/* =====================================================
+   ANIMATED BOTTOM LINE
+===================================================== */
+
+.week-day-line {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    background: #ffd400;
+
+    transition:
+
+        width .45s cubic-bezier(.65,0,.35,1);
+
+}
+
+
+/* =====================================================
+   HOVER ANIMATION
+===================================================== */
+
+.week-day-card:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.015);
+
+    border-color: #ffd400;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151618,
+            #0b0c0e
+        );
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0, 0, 0, .45),
+
+        0 0 22px
+        rgba(255, 212, 0, .08);
+
+}
+
+
+/* animated line */
+
+.week-day-card:hover .week-day-line {
+
+    width: 100%;
+
+}
+
+
+/* title animation */
+
+.week-day-card:hover h4 {
+
+    color: #ffd400;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* description */
+
+.week-day-card:hover p {
+
+    color: #9b9da1;
+
+}
+
+
+/* label animation */
+
+.week-day-card:hover .week-day-label {
+
+    background: #ffd400;
+
+    color: #111;
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* =====================================================
+   DAY NAME ANIMATION
+===================================================== */
+
+.week-day-card:hover .week-day-name {
+
+    animation:
+        weekDayPulse .7s ease;
+
+}
+
+
+@keyframes weekDayPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   GLOW EFFECT
+===================================================== */
+
+.week-day-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+
+    height: 80px;
+
+    right: -40px;
+
+    top: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 212, 0, .08);
+
+    filter: blur(20px);
+
+    opacity: 0;
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+
+}
+
+
+.week-day-card:hover::after {
+
+    opacity: 1;
+
+    transform:
+        scale(1.5);
+
+}
+
+
+/* =====================================================
+   SUNDAY REST
+===================================================== */
+
+.week-rest-card {
+
+    opacity: .65;
+
+}
+
+
+.week-rest-card .week-day-name {
+
+    color: #777a80;
+
+}
+
+
+.week-rest-card .week-day-label {
+
+    background: #292b2f;
+
+    color: #888b91;
+
+}
+
+
+.week-rest-card:hover {
+
+    opacity: 1;
+
+}
+
+
+.week-rest-card:hover .week-day-name {
+
+    color: #ffd400;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .week-day-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .week-blueprint {
+
+        padding: 22px;
+
+    }
+
+
+    .week-blueprint-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .week-blueprint-heading h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .week-blueprint-frequency {
+
+        width: 100%;
+
+        white-space: normal;
+
+    }
+
+
+    .week-day-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .week-blueprint {
+
+        padding: 16px;
+
+    }
+
+
+    .week-blueprint-heading h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .week-day-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.footer {
+    width: 100%;
+    background: #050505;
+}
+
+.footer-bottom {
+    min-height: 80px;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-developer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-developer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-developer a:hover {
+    opacity: 0.8;
+}
+
+.footer-developer img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.footer-developer strong {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
